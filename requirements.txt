@@ -1,0 +1,9 @@
+h5py
+jupyter
+keras
+livelossplot
+matplotlib
+pyyaml
+scikit-image
+sklearn
+tensorflow-gpu

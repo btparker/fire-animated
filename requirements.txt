@@ -1,8 +1,11 @@
+coremltools
 h5py
 jupyter
 keras
 livelossplot
 matplotlib
+pandas
+plumbum
 pyyaml
 scikit-image
 sklearn

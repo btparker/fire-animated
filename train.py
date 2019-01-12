@@ -25,6 +25,7 @@ from keras.layers import Input, InputLayer
 from keras.models import Model
 import keras.backend as K
 from keras.models import load_model
+import coremltools
 
 
 from livelossplot import PlotLossesKeras
@@ -136,21 +137,23 @@ validation_directory="data/dataset/validation"
 train_data, train_labels = get_data_and_labels(training_directory)
 val_data, val_labels = get_data_and_labels(validation_directory)
 
-model = create_model_and_fit(
-  train_data=train_data,
-  train_labels=train_labels,
-  val_data=val_data,
-  val_labels=val_labels,
-  nb_classes=2,
-  nb_epochs=2000,
-)
+# model = create_model_and_fit(
+#   train_data=train_data,
+#   train_labels=train_labels,
+#   val_data=val_data,
+#   val_labels=val_labels,
+#   nb_classes=2,
+#   nb_epochs=2000,
+# )
 
-model.summary()
+# model.summary()
 
-# Save entire model to a HDF5 file
-model.save('model.h5')
-del model
+# # Save entire model to a HDF5 file
+# model.save('model.h5')
+# del model
 model = keras.models.load_model('model.h5')
+coreml_model = coremltools.converters.keras.convert('model.h5')
+coreml_model.save('model.mlmodel')
 
 # val_data, val_labels = get_data_and_labels(validation_directory, False)
 

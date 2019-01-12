@@ -44,15 +44,15 @@ TARGET_IMG_RGB_SIZE = (*TARGET_IMG_SIZE, 3)
 ## TRAINING HELPERS
 # Which things to 'find' in an image, must have
 # the same name in training directory
-DETECTION_CLASSES = ["Fire"]
+DETECTION_CLASSES = ["fire"]
 
 # Adding background to better train data
-TRAIN_CLASSES = DETECTION_CLASSES + ["Background"]
+TRAIN_CLASSES = ["background"] + DETECTION_CLASSES
 
 LABEL2CLASS = dict(enumerate(TRAIN_CLASSES))
 CLASS2LABEL = {cl: label for label, cl in LABEL2CLASS.items()}
 
-CLASS_WEIGHTS = {label: 1 if cl != 'Background' else 1 for label, cl in LABEL2CLASS.items()}
+CLASS_WEIGHTS = {label: 1 if cl != 'background' else 1 for label, cl in LABEL2CLASS.items()}
 
 def get_data_and_labels(directory, shuffle=True):
     gen = image.ImageDataGenerator()

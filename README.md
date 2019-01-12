@@ -9,9 +9,9 @@ Pyenv can't find PyQt, so add to python path:
 
 ### Data
 
-- [ ] Pandas ledger of images and classifications, by movie
-- [ ] Combine movie datasets into one large Pandas ledger
-- [ ] Split into training/validation/testing
+- [x] Pandas ledger of images and classifications, by movie
+- [x] Combine movie datasets into one large Pandas ledger
+- [x] Split into training/validation/testing
 - [ ] Convert to TFRecords https://github.com/kwotsin/create_tfrecords/
 
 ### Training

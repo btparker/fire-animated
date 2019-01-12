@@ -4,6 +4,7 @@ jupyter
 keras
 livelossplot
 matplotlib
+opencv-python
 pandas
 plumbum
 pyyaml
